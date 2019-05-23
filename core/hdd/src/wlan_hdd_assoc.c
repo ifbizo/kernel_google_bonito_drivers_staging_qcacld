@@ -5654,7 +5654,9 @@ static void hdd_set_def_rsne_override(
 {
 
 	hdd_debug("Set def values in roam profile");
+#ifdef WLAN_FEATURE_11W
 	roam_profile->MFPCapable = roam_profile->MFPEnabled;
+#endif
 	roam_profile->EncryptionType.numEntries = 2;
 	roam_profile->mcEncryptionType.numEntries = 2;
 	/* Use the cipher type in the RSN IE */
